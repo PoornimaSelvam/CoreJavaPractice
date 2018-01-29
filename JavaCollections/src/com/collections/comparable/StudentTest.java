@@ -2,6 +2,7 @@ package com.collections.comparable;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Iterator;
 import java.util.List;
 
 /**
@@ -21,7 +22,12 @@ public class StudentTest {
 		stList.add(new Student("Kiran", 456, 36));
 		stList.add(new Student("Chetna", 789, 6));
 		
-		//Collections.sort(stList);
+		/*Collections.sort(stList);
+		Iterator itr = stList.iterator();
+		while (itr.hasNext()) {
+			Student st = (Student) itr.next();
+			System.out.println(st.rollno + " " + st.name + " " + st.age);
+		}*/
 		
 		stList.stream().sorted().forEach(e -> System.out.println(e.name + " " + e.rollno + " " + e.age));
 	}
