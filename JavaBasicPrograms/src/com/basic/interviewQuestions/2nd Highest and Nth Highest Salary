@@ -1,0 +1,12 @@
+2nd Highest Salary
+-------------------
+select max(salary) from table_name where salary not in (select max(salary) from table_name)
+
+OR
+
+select max(salary) from table_name where salary < (select max(salary) from table_name)
+
+3rd Highest or Nth Highest Salary
+--------------------------------
+select salary from
+(select row_number() over (order by salary desc) as rn, salary from table_name) where rn = 4
